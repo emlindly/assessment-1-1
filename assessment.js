@@ -22,6 +22,7 @@
 
 "A method is a pre-determined function within an already written system. A function can be named, written and executed however you want in your own code."
 
+
 /**
  * QUESTION #2 -
  * What is wrong with the following for loop?
@@ -34,7 +35,9 @@ for (let i = 0; i = timesToLoop; i++) {
     console.log('I am looping!');
 }
 
-"There are no defined parameters nor arguments to pass through the parameters. The condition 'i = timesToLoop' is incorrect. It should be written as i <= 15; in order to run it 15 times. Additionally, the console.log should not contain an irrelevant string, it should contain nothing or an "i"."
+"Revised Answer: The i=timesToLoop is incorrect. If you want your "for loop" to run 15 times it would need to say i <= 14."
+
+
 /**
  * QUESTION #3 -
  * Which type of conditional do you use when you want to assign a value to a variable based on a two-path conditional?
@@ -43,7 +46,8 @@ for (let i = 0; i = timesToLoop; i++) {
  * Answer Type: String (Add Answer Between Quotes)
  */
 
-"if and else statements."
+
+"Revised Answer: You would use a ternary."
 
 /**
  * QUESTION #4 -
@@ -94,7 +98,7 @@ function testQuestionSeven() {
     }
 }
 
-"You never called the function. Below the yellow bracket you'd need to write testQuestionSeven();. Depending on what you place in the argument, will dictate your output. If your statement evaluates to true, the output will be "Yes". Otherwise, your output will be "No"."
+"Revised Answer: You never called the function. But if you did, the output would be 'No!'"
 
 /**
  * QUESTION #8 -
@@ -113,7 +117,7 @@ function testQuestionSeven() {
  * Answer Type: String (Add Answer Between Quotes)
  */
 
-"An IIFE wraps your code so that it executes your functions immediately. This is best practice as it protects your code so that none of your code or variables can be accessed by others without your knowledge."
+"Revised Answer: Wrapping your code in an IIFE prevents pollution of the global scope when it comes to code and variables."
 
 /**
  * QUESTION #10 -
@@ -134,7 +138,7 @@ switch (value) {
         console.log('We are out of food...');
 };
 
-"The answer is french fries!"
+"Revised Answer: The output is the default 'We are out of food...'"
 
 /**
  * QUESTION #11 -
@@ -143,29 +147,29 @@ switch (value) {
  * Answer Type: Function
  */
 
-gridConfig = {
+
+"Revised Answer: "
+
+let gridConfig = {
     width: 50,
     height: 50
 }
 
-function createGrid(width, height) {
-// Creates a grid container element in order to house the grid //
-    let gridContainer = document.createElement('div');
-    gridContainer.classList.add('grid-container');
-// Creates a row element, generates it in a loop until height param is met, and appends it to the created grid container above //
-    for (i = 0; i < height; i++) {
+function makeGrid(width, height) {
+    for (let i = 0; i < height; i++) {
+        let gridContainer = document.querySelector('.grid-container');
         let row = document.createElement('div');
         row.classList.add('row');
+        gridContainer.appendChild(row);
+
+        for (let j = 0; j < width; j++) {
+            let square = document.createElement('div');
+            square.classList.add('square');
+            row.appendChild(square);
+        }
     }
-    gridContainer.appendChild(row);
-// Creates a square element, generates it in a loop until width param is met, and appends it to the created row above //
-    for (j = 0; j < width; j++) {
-        let square = document.createElement('div');
-        square.classList.add('square');
-    }
-    row.appendChild(square);
 }
-createGrid(gridConfig.width, gridConfig.height);
+makeGrid(gridConfig.width, gridConfig.height);
 
 /**
  * QUESTION #12 -
@@ -175,6 +179,7 @@ createGrid(gridConfig.width, gridConfig.height);
  */
 
 "A global variable is a variable that can be accessed anywhere within your JS. A local variable is a variable you've created and can only be accessed within the same function it was created."
+
 
 /**
  * QUESTION #13 - (EXTRA CREDIT!)
@@ -189,3 +194,5 @@ createGrid(gridConfig.width, gridConfig.height);
  */
 
 "C)"
+
+"Revised Answer: A)"
